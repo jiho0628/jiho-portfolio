@@ -13,6 +13,7 @@ RUN npm install
 # 全ファイルをコピー
 COPY . .
 
+RUN npm run build
 # コンテナ起動時にReact開発サーバーを実行
 CMD ["npm", "run", "dev"]
 
