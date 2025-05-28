@@ -184,47 +184,49 @@ export default function Skill() {
         <section id="skills" className="non-colored-section">
             <div className="inner" ref={sectionRef}>
                 <div className="inner text-center">
-                    <div className="section-title-area">
-                        <div className="section-title">SKILLS</div>
-                        <div className="section-intro">
-                            バックエンドを中心に幅広く学んでいます。<br />
-                            現在はフロントエンド、クラウドにも挑戦中です。
-                        </div>
-                    </div>
-
-                    {/* 各カテゴリごとのセクション */}
-                    {skillGroups.map((group, groupIndex) => (
-                        <div key={groupIndex} className="my-12">
-                            <h3 className="text-sub-title text-darkblue mb-6">{group.title}</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto">
-                                {group.skills.map((skill, i) => (
-                                    <div
-                                        key={i}
-                                        className="flex items-start gap-8 p-1 rounded skill-item"
-                                    >
-                                        <div className="w-18 h-18 flex items-center justify-center flex-shrink-0">
-                                            <Image
-                                                src={skill.icon}
-                                                width={80}
-                                                height={80}
-                                                alt={skill.name}
-                                                className="object-contain mt-1"
-                                            />
-                                        </div>
-                                        <div className="text-left">
-                                            <div className="text-base font-bold text-darkblue pb-2">
-                                                {skill.name}
-                                            </div>
-                                            <StarRating score={skill.rating} />
-                                            <div className="text-base text-darkblue leading-snug">
-                                                {skill.description}
-                                            </div>
-                                        </div>
-                                    </div>
-                                ))}
+                    <div className="max-w-5xl mx-auto px-4">
+                        <div className="section-title-area">
+                            <div className="section-title">SKILLS</div>
+                            <div className="section-intro">
+                                バックエンドを中心に幅広く学んでいます。<br />
+                                現在はフロントエンド、クラウドにも挑戦中です。
                             </div>
                         </div>
-                    ))}
+
+                        {/* 各カテゴリごとのセクション */}
+                        {skillGroups.map((group, groupIndex) => (
+                            <div key={groupIndex} className="my-12">
+                                <h3 className="text-sub-title text-darkblue mb-6">{group.title}</h3>
+                                <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto px-4 md:px-4">
+                                    {group.skills.map((skill, i) => (
+                                        <div
+                                            key={i}
+                                            className="flex items-start gap-8 p-1 rounded skill-item"
+                                        >
+                                            <div className="w-18 h-18 flex items-center justify-center flex-shrink-0">
+                                                <Image
+                                                    src={skill.icon}
+                                                    width={80}
+                                                    height={80}
+                                                    alt={skill.name}
+                                                    className="object-contain mt-1"
+                                                />
+                                            </div>
+                                            <div className="text-left">
+                                                <div className="text-base font-bold text-darkblue pb-2">
+                                                    {skill.name}
+                                                </div>
+                                                <StarRating score={skill.rating} />
+                                                <div className="text-base text-darkblue leading-snug">
+                                                    {skill.description}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>

@@ -30,33 +30,37 @@ export default function Contacts() {
     return (
         <section id="contacts" className="non-colored-section">
             <div className="inner text-center">
-                <div className="section-title-area">
-                    <div className="section-title">Contacts</div>
-                    <div className="section-intro">
-                        最後までご覧頂きありがとうございます。
-                        このサイトを通して私のことを少しでも知っていただければ幸いです。<br />
-                        このサイトや、私に関して何かコメントがありましたら、下記フォームをご利用ください。
+
+                {/* 👇 フォームと同じ幅に揃えるラッパー */}
+                <div className="max-w-5xl mx-auto px-4">
+                    <div className="section-title-area">
+                        <div className="section-title">Contacts</div>
+                        <div className="section-intro text-sm sm:text-base">
+                            最後までご覧頂きありがとうございます。
+                            このサイトを通して私のことを少しでも知っていただければ幸いです。<br />
+                            このサイトや、私に関して何かコメントがありましたら、下記フォームをご利用ください。
+                        </div>
                     </div>
                 </div>
 
                 <form
                     ref={formRef}
                     onSubmit={handleSubmit}
-                    className="mt-10 space-y-6 max-w-2xl mx-auto"
+                    className="mt-10 space-y-6 max-w-2xl mx-auto px-4"
                 >
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <input
                             type="text"
                             name="name"
                             placeholder="Name"
-                            className="border-b border-gray-400 p-2 focus:outline-none bg-transparent"
+                            className="border-b border-gray-400 p-2 focus:outline-none bg-transparent w-full"
                             required
                         />
                         <input
                             type="email"
                             name="email"
                             placeholder="Email"
-                            className="border-b border-gray-400 p-2 focus:outline-none bg-transparent"
+                            className="border-b border-gray-400 p-2 focus:outline-none bg-transparent w-full"
                             required
                         />
                     </div>
@@ -79,7 +83,6 @@ export default function Contacts() {
 
                 {/* ▼ アイコンだけのSNSリンク */}
                 <div className="flex justify-center gap-6 mt-8">
-
                     {/* GitHub */}
                     <a
                         href="https://github.com/jiho0628"
@@ -88,7 +91,7 @@ export default function Contacts() {
                     >
                         <Image
                             src="/etc/github.svg"
-                            alt="Kyoto University"
+                            alt="GitHub"
                             width={40}
                             height={40}
                             className="transform transition duration-300 hover:scale-110 hover:shadow-md"
@@ -103,14 +106,14 @@ export default function Contacts() {
                     >
                         <Image
                             src="/etc/linkedin.svg"
-                            alt="Kyoto University"
+                            alt="LinkedIn"
                             width={40}
                             height={40}
                             className="transform transition duration-300 hover:scale-110 hover:shadow-md"
                         />
                     </a>
                 </div>
-            </div>
-        </section>
+            </div >
+        </section >
     );
 }

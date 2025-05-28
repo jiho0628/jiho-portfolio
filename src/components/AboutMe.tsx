@@ -1,20 +1,15 @@
-// components/AboutMe.tsx
-import Image from 'next/image'
+import Image from 'next/image';
 
 export default function AboutMe() {
     return (
         <section id="about" className="colored-section">
             <div className="inner">
-                <div className="section-title-area">
-                    <div className="section-title">
-                        About Me
+                <div className="max-w-5xl mx-auto px-4">
+                    <div className="section-title-area">
+                        <div className="section-title">About Me</div>
+                        <div className="section-intro">はじめまして！</div>
                     </div>
-                    <div className="section-intro">
-                        はじめまして！
-                    </div>
-                </div>
-                <div className="section-content">
-                    <div className="max-w-5xl mx-auto px-10 flex flex-col md:flex-row items-center gap-20">
+                    <div className="section-content max-w-5xl mx-auto px-4 flex flex-col md:flex-row items-center gap-10 sm:gap-14 md:gap-20">
                         {/* プロフィール画像 */}
                         <div className="w-40 h-40 rounded-full overflow-hidden flex-shrink-0">
                             <Image
@@ -28,7 +23,7 @@ export default function AboutMe() {
 
                         {/* 自己紹介文 */}
                         <div>
-                            <p className="text-base leading-relaxed">
+                            <p className="text-sm sm:text-base leading-relaxed">
                                 こんにちは、柳 智浩（りゅう じほ）と申します。
                                 中国人の両親のもと、千葉県で生まれ育ち、大学進学を機に京都へ移住しました。<br />
                                 趣味は旅行で、いつか日本全国と世界中を旅するのが夢です。
@@ -43,7 +38,6 @@ export default function AboutMe() {
                                 今は、AIの研究ができるフルスタックエンジニアを目指して、主にバックエンドをはじめ、フロントエンド、インフラまで幅広く挑戦しています。
                                 自分の作ったプロダクトが人の役に立ち、少しでも世の中を良くすることが一番の喜びだと思っています。
                                 そのために、現在もさまざまな技術分野の学習に励んでいます。
-
                             </p>
                         </div>
                     </div>

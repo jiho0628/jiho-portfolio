@@ -8,6 +8,15 @@ interface HeroProps {
     triggerAnimation: boolean;
 }
 
+const sections = [
+    { id: 'about', label: 'About' },
+    { id: 'education', label: 'Education' },
+    { id: 'work', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'products', label: 'Products' },
+    { id: 'contacts', label: 'Contacts' },
+];
+
 export default function Hero({ triggerAnimation }: HeroProps) {
     const heroRef = useRef<HTMLDivElement>(null);
     const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
@@ -19,14 +28,12 @@ export default function Hero({ triggerAnimation }: HeroProps) {
     useEffect(() => {
         if (!triggerAnimation) return;
 
-        // Hero本体のフェードイン
         gsap.fromTo(
             heroRef.current,
             { opacity: 0, scale: 0.95 },
             { opacity: 1, scale: 1, duration: 1, ease: 'power2.out', delay: 0.3 }
         );
 
-        // テキスト（J以外）のアニメーション
         lettersRef.current.forEach((el) => {
             if (el) gsap.set(el, { opacity: 0, y: 50 });
         });
@@ -43,7 +50,6 @@ export default function Hero({ triggerAnimation }: HeroProps) {
             }
         });
 
-        // Jアイコンの降下アニメーション
         if (fixedJRef.current) {
             gsap.fromTo(
                 fixedJRef.current,
@@ -58,7 +64,7 @@ export default function Hero({ triggerAnimation }: HeroProps) {
                 }
             );
         }
-        // intro のアニメーション（あとから左からスライドして出る）
+
         if (introRef.current) {
             gsap.fromTo(
                 introRef.current,
@@ -67,7 +73,7 @@ export default function Hero({ triggerAnimation }: HeroProps) {
                     x: 0,
                     opacity: 1,
                     duration: 1,
-                    delay: 0.6 + name.length * 0.1 + 0.2, // 少し余裕をもって
+                    delay: 0.6 + name.length * 0.1 + 0.2,
                     ease: 'power2.out',
                 }
             );
@@ -79,7 +85,6 @@ export default function Hero({ triggerAnimation }: HeroProps) {
 
         const jEl = fixedJRef.current;
 
-        // 初期アニメーション
         gsap.fromTo(
             jEl,
             { y: -200, opacity: 0, scale: 0.8 },
@@ -93,7 +98,6 @@ export default function Hero({ triggerAnimation }: HeroProps) {
             }
         );
 
-        // ✅ クリックイベントで跳ねる
         const handleClick = () => {
             gsap.fromTo(
                 jEl,
@@ -111,15 +115,15 @@ export default function Hero({ triggerAnimation }: HeroProps) {
         jEl.addEventListener('click', handleClick);
 
         return () => {
-            jEl.removeEventListener('click', handleClick); // クリーンアップ
+            jEl.removeEventListener('click', handleClick);
         };
     }, [triggerAnimation]);
 
     return (
-        <section className="hero-container flex flex-col items-center justify-center text-center">
+        <section id="hero" className="hero-container flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8">
             <div
                 ref={heroRef}
-                className="text-hero font-bold text-darkblue flex items-center justify-center relative"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold text-darkblue flex items-center justify-center relative"
             >
                 {name.map((char, i) => {
                     if (char === 'J') {
@@ -150,7 +154,7 @@ export default function Hero({ triggerAnimation }: HeroProps) {
             </div>
             <p
                 ref={introRef}
-                className="mt-4 text-sm text-darkgray opacity-0 flex items-center justify-center"
+                className="mt-4 text-sm sm:text-base text-darkgray opacity-0 flex items-center justify-center"
             >
                 <span className="tracking-widest">Click</span>
                 <TbCircleLetterJFilled size={24} className="text-darkgray mx-2" />
