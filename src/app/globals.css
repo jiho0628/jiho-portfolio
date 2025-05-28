@@ -1,4 +1,90 @@
-/* app/globals.css */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+        --color-darkblue: #171C61;
+        --color-darkgray: #708090;
+        --color-lightgray: #DCE7F2;
+        --color-whitegray: #F5F8FE;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  color: var(--color-darkblue);
+  background: var(--color-whitegray);
+  margin: 0;
+  padding: 0;
+  line-height: 1.875;      /* = leading-relaxed */
+  letter-spacing: 0.05em;
+}
+
+.colored-section {
+  background: var(--color-lightgray);
+  padding: 6.25rem;
+  position: relative;
+  z-index: 20;
+}
+
+.non-colored-section {
+  padding: 6.25rem;
+  position: relative;
+  z-index: 10;
+}
+
+.inner {
+  padding: 2.5rem;
+  margin: auto;
+}
+
+.section-title-area {
+  padding-bottom: 2.5rem;
+  text-align: center
+}
+
+.section-title {
+  font-size: 2.5rem;                /* 約32px */
+  font-weight: 700;
+  color: var(--color-darkblue);                 /* 濃いグレー or カスタム色 */
+  padding-bottom: 1rem;
+  position: relative;
+}
+
+.section-intro {
+  font-size: 1rem;
+}
+
+.section-content {
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.25rem;
+}
+
+.card {
+  display: flex;
+  flex-basis: 2.5rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-bottom: 3.125rem;
+}
+
+.hero-container {
+  min-height: 100vh;              /* min-h-screen */
+  width: 100%;                    /* w-full */
+  color: var(--color-darkblue);                /* text-darkblue → Tailwindのdarkblueに相当 */
+  font-family: 'Noto Sans JP', sans-serif; /* font-sans（拡張されていれば） */
+  padding-left: 0;               /* px-0 */
+  padding-right: 0;
+  display: flex;                 /* flex */
+  align-items: center;          /* items-center */
+  justify-content: center;      /* justify-center */
+  letter-spacing: 0.5rem;
+  z-index: 10;
+  position: relative;
+}
