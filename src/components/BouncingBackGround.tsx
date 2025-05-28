@@ -47,11 +47,18 @@ export default function BouncingBackground() {
         setConfig(getResponsiveConfigSafe());
     }, []);
 
+    // 👇 最初に取得しておく（スクロールで変わらない高さを維持する）
+    const stableVh = useRef<number | null>(null);  // nullで初期化（未設定）
+
     useEffect(() => {
         if (!mounted) return;
 
+        // ✅ 一度だけ設定
+        if (stableVh.current === null) {
+            stableVh.current = window.innerHeight;
+        }
+
         const vw = window.innerWidth;
-        const vh = window.innerHeight;
 
         const createdBalls: Ball[] = Array.from({ length: config.numBalls }).map(() => {
             const angle = Math.random() * 2 * Math.PI;
@@ -60,7 +67,7 @@ export default function BouncingBackground() {
 
             return {
                 x: Math.random() * (vw - config.size),
-                y: Math.random() * (vh - config.size),
+                y: Math.random() * ((stableVh.current ?? window.innerHeight) - config.size),
                 dx,
                 dy,
                 ref: React.createRef<HTMLDivElement | null>(),
@@ -70,15 +77,15 @@ export default function BouncingBackground() {
         setBalls(createdBalls);
 
         return () => cancelAnimationFrame(animationFrameRef.current!);
-    }, [mounted, config]);
+    }, [mounted, config]);  // ← ここで再実行されても設定は変わらない
 
     useEffect(() => {
         if (balls.length === 0) return;
 
-        const vw = window.innerWidth;
-        const vh = window.innerHeight;
-
         const animate = () => {
+            const vw = window.innerWidth;
+            const vh = stableVh.current ?? window.innerHeight;
+
             for (const ball of balls) {
                 ball.x += ball.dx;
                 ball.y += ball.dy;

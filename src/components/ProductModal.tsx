@@ -48,16 +48,15 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, productGro
     };
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-2">
-            <div className="bg-whitegray w-full max-w-7xl h-[80vh] rounded-lg p-4 md:p-10 relative shadow-lg flex flex-col md:flex-row overflow-hidden">
-                <button
-                    className="absolute top-3 right-4 text-darkgray hover:text-lightgray text-2xl z-10"
-                    onClick={onClose}
-                >
-                    ×
-                </button>
-
-                {/* ✅ 画像（スマホでは上に） */}
+        <div
+            className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center px-2"
+            onClick={onClose} // 外側クリックで閉じる
+        >
+            <div
+                className="bg-whitegray w-full max-w-7xl h-[60vh] rounded-lg p-4 md:p-10 relative shadow-lg flex flex-col md:flex-row overflow-hidden"
+                onClick={(e) => e.stopPropagation()} // モーダル内クリックでは閉じない
+            >
+                {/* 画像部分 */}
                 <div className="w-full md:w-[60%] h-[50%] md:h-full flex flex-col items-center justify-center relative overflow-hidden">
                     <img
                         src={productGroup.image[currentIndex]}
@@ -87,7 +86,7 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, productGro
                     )}
                 </div>
 
-                {/* ✅ テキスト部分 */}
+                {/* テキスト部分 */}
                 <div className="flex-1 overflow-y-auto mt-6 md:mt-0 md:pl-6">
                     <h2 className="text-[1.5rem] md:text-[2rem] font-semibold mb-4">{productGroup.title}</h2>
                     <p className="text-sm text-darkgray mb-2">{productGroup.date}</p>
