@@ -71,7 +71,7 @@ const skillGroups: SkillGroup[] = [
             {
                 name: 'Java',
                 description: '大学の授業で使用しました。京大では、Javaを使って遺伝アルゴリズムでマリオをクリアするAIを作りました。留学先では、Javaを使って5人のチームでスタンドアロンの簡単なRedditのようなアプリを作成しました。',
-                icon: '/skills/Java-icon.svg', rating: 3
+                icon: '/skills/java.svg', rating: 3
             },
             {
                 name: 'C/C++',
