@@ -8,15 +8,6 @@ interface HeroProps {
     triggerAnimation: boolean;
 }
 
-const sections = [
-    { id: 'about', label: 'About' },
-    { id: 'education', label: 'Education' },
-    { id: 'work', label: 'Experience' },
-    { id: 'skills', label: 'Skills' },
-    { id: 'products', label: 'Products' },
-    { id: 'contacts', label: 'Contacts' },
-];
-
 export default function Hero({ triggerAnimation }: HeroProps) {
     const heroRef = useRef<HTMLDivElement>(null);
     const lettersRef = useRef<(HTMLSpanElement | null)[]>([]);
