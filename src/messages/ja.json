@@ -86,7 +86,7 @@
                     "FastAPI": {
                         "name": "FastAPI",
                         "description": "StarUpの図面管理システムで使用しました。API設計の経験もあります。",
-                        "icon": "python.svg",
+                        "icon": "fastapi.svg",
                         "rating": "4"
                     },
                     "Java": {
