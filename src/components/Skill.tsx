@@ -74,7 +74,7 @@ export default function Skill() {
                                                         src={`/skills/${skillDesc.icon}`}
                                                         width={80}
                                                         height={80}
-                                                        alt={skillDesc.name}
+                                                        alt={skillName}
                                                         className="object-contain mt-1"
                                                     />
                                                 </div>
