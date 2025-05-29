@@ -3,11 +3,13 @@ import Image from 'next/image';
 import { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { useTranslations } from 'next-intl';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Work() {
     const sectionRef = useRef<HTMLDivElement>(null);
+    const t = useTranslations('Experience');
 
     useEffect(() => {
         const items = sectionRef.current?.querySelectorAll('.experience-item');
@@ -42,8 +44,7 @@ export default function Work() {
                     <div className="section-title-area">
                         <div className="section-title">Experience</div>
                         <div className="section-intro">
-                            インターンの経歴です。今後も長期、短期含め色々なインターンを経験したいと考えています。<br />
-                            アイコンをクリックして会社のホームページを見ることができます。
+                            {t('intro')}
                         </div>
                     </div>
 
@@ -67,13 +68,12 @@ export default function Work() {
                                     </div>
                                 </a>
                                 <div>
-                                    <p className="text-sm text-darkgray">2024/03 - 2024/07</p>
+                                    <p className="text-sm text-darkgray">{t('exp1.period')}</p>
                                     <h3 className="text-sub-title font-semibold text-darkblue">
-                                        muilab Inc.
+                                        {t('exp1.name')}
                                     </h3>
                                     <p className="text-base leading-relaxed text-darkblue mt-2">
-                                        長期インターンの予定でしたが、留学を機に一度お休みをしています。
-                                        主にAWSを使ってインフラの構築に携わっていました。また、TypeScriptでテストケースを書いていました。
+                                        {t('exp1.description')}
                                     </p>
                                 </div>
                             </div>
@@ -96,13 +96,12 @@ export default function Work() {
                                     </div>
                                 </a>
                                 <div>
-                                    <p className="text-sm text-darkgray">2024/05 - 現在</p>
+                                    <p className="text-sm text-darkgray">{t('exp2.period')}</p>
                                     <h3 className="text-sub-title font-semibold text-darkblue">
-                                        StarUp Inc.
+                                        {t('exp2.name')}
                                     </h3>
                                     <p className="text-base leading-relaxed text-darkblue mt-2">
-                                        長期インターンとして働いています。主に、AIの開発、バックエンドの構築に携わっています。
-                                        また、図面管理サービスのプロダクトのPMとしても携わっています。
+                                        {t('exp2.description')}
                                     </p>
                                 </div>
                             </div>
