@@ -67,7 +67,7 @@ export default function Skill() {
                                 <div key={i} className="my-12">
                                     <h3 className="text-sub-title text-darkblue mb-6">{group.title}</h3>
                                     <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-4xl mx-auto px-4 md:px-4">
-                                        {Object.entries(items).map(([skillName, skillDesc], j) => (
+                                        {Object.entries(items).map(([_, skillDesc], j) => (
                                             <div key={j} className="flex items-start gap-8 p-1 rounded skill-item">
                                                 <div className="w-18 h-18 flex items-center justify-center flex-shrink-0">
                                                     <Image
