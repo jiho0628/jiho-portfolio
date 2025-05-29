@@ -21,7 +21,7 @@ export default function Skill() {
     const t = useTranslations('Skills');
     const sectionRef = useRef<HTMLDivElement>(null);
 
-    const categories = ['Frontend', 'Backend', 'Database', 'Infrastructure', 'MachineLearning'] as const;
+    const categories = ['Frontend', 'Backend', 'Database', 'Infrastructure', 'MachineLearning', 'Etc'] as const;
 
     useEffect(() => {
         const items = sectionRef.current?.querySelectorAll('.skill-item');

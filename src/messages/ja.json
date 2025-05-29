@@ -183,6 +183,23 @@
                         "rating": "2"
                     }
                 }
+            },
+            "Etc": {
+                "title": "その他",
+                "items": {
+                    "TOEIC": {
+                        "name": "TOEIC",
+                        "description": "2024年4月にTOEICで915点を獲得しました。内訳は、それぞれ495点中リスニング470点、リーディング450点です。",
+                        "icon": "ets.svg",
+                        "rating": "4"
+                    },
+                    "TOEFL": {
+                        "name": "TOEFL",
+                        "description": "2023年12月にTOEFL iBTで93点を獲得しました。内訳はそれぞれ30点中リーディング22点、リスニング25点、スピーキング21点、ライティング30点です。",
+                        "icon": "ets.svg",
+                        "rating": "4"
+                    }
+                }
             }
         }
     },

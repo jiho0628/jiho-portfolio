@@ -183,6 +183,23 @@
                         "rating": "2"
                     }
                 }
+            },
+            "Etc": {
+                "title": "Others",
+                "items": {
+                    "TOEIC": {
+                        "name": "TOEIC",
+                        "description": "Scored 915 on the TOEIC in April 2024, with 470 in Listening and 450 in Reading (each out of 495).",
+                        "icon": "ets.svg",
+                        "rating": "4"
+                    },
+                    "TOEFL": {
+                        "name": "TOEFL",
+                        "description": "Scored 93 on the TOEFL iBT in December 2023, with 22 in Reading, 25 in Listening, 21 in Speaking, and 30 in Writing (each out of 30).",
+                        "icon": "ets.svg",
+                        "rating": "4"
+                    }
+                }
             }
         }
     },
