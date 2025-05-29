@@ -1,8 +1,9 @@
-'use client';
 import { useRef } from 'react';
+import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 export default function Contacts() {
+    const t = useTranslations('Contacts');
     const formRef = useRef<HTMLFormElement>(null);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -19,26 +20,23 @@ export default function Contacts() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(payload),
         });
-        console.log(result)
-        if (result.status == 200 || result.status == 201) {
-            alert('ありがとうございます！メッセージを送信しました！');
+
+        if (result.ok) {
+            alert(t('success'));
             formRef.current?.reset();
         } else {
-            alert(`失敗しました ${result.status}`);
+            alert(`${t('error')} ${result.status}`);
         }
     };
+
     return (
         <section id="contacts" className="non-colored-section">
             <div className="inner text-center">
-
-                {/* 👇 フォームと同じ幅に揃えるラッパー */}
                 <div className="max-w-5xl mx-auto px-4">
                     <div className="section-title-area">
-                        <div className="section-title">Contacts</div>
-                        <div className="section-intro text-sm sm:text-base">
-                            最後までご覧頂きありがとうございます。
-                            このサイトを通して私のことを少しでも知っていただければ幸いです。<br />
-                            このサイトや、私に関して何かコメントがありましたら、下記フォームをご利用ください。
+                        <div className="section-title">{t('title')}</div>
+                        <div className="section-intro text-sm sm:text-base whitespace-pre-line">
+                            {t('intro')}
                         </div>
                     </div>
                 </div>
@@ -52,21 +50,21 @@ export default function Contacts() {
                         <input
                             type="text"
                             name="name"
-                            placeholder="Name"
+                            placeholder={t('name')}
                             className="border-b border-gray-400 p-2 focus:outline-none bg-transparent w-full"
                             required
                         />
                         <input
                             type="email"
                             name="email"
-                            placeholder="Email"
+                            placeholder={t('email')}
                             className="border-b border-gray-400 p-2 focus:outline-none bg-transparent w-full"
                             required
                         />
                     </div>
                     <textarea
                         name="comment"
-                        placeholder="Comment"
+                        placeholder={t('comment')}
                         rows={4}
                         className="w-full border-b border-gray-400 p-2 focus:outline-none bg-transparent"
                         required
@@ -76,44 +74,20 @@ export default function Contacts() {
                             type="submit"
                             className="bg-darkblue text-white px-6 py-2 rounded hover:bg-opacity-80 transition"
                         >
-                            SEND
+                            {t('send')}
                         </button>
                     </div>
                 </form>
 
-                {/* ▼ アイコンだけのSNSリンク */}
                 <div className="flex justify-center gap-6 mt-8">
-                    {/* GitHub */}
-                    <a
-                        href="https://github.com/jiho0628"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                            src="/etc/github.svg"
-                            alt="GitHub"
-                            width={40}
-                            height={40}
-                            className="transform transition duration-300 hover:scale-110 hover:shadow-md"
-                        />
+                    <a href="https://github.com/jiho0628" target="_blank" rel="noopener noreferrer">
+                        <Image src="/etc/github.svg" alt="GitHub" width={40} height={40} className="hover:scale-110" />
                     </a>
-
-                    {/* LinkedIn */}
-                    <a
-                        href="https://www.linkedin.com/in/智浩-柳-1146272a7"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Image
-                            src="/etc/linkedin.svg"
-                            alt="LinkedIn"
-                            width={40}
-                            height={40}
-                            className="transform transition duration-300 hover:scale-110 hover:shadow-md"
-                        />
+                    <a href="https://www.linkedin.com/in/智浩-柳-1146272a7" target="_blank" rel="noopener noreferrer">
+                        <Image src="/etc/linkedin.svg" alt="LinkedIn" width={40} height={40} className="hover:scale-110" />
                     </a>
                 </div>
-            </div >
-        </section >
+            </div>
+        </section>
     );
 }

@@ -1,0 +1,12 @@
+{
+    "Contacts": {
+        "title": "Contact",
+        "intro": "Thank you for visiting my site. I hope you got to know a little about me through this page.\nIf you have any comments or feedback, please feel free to contact me using the form below.",
+        "name": "Name",
+        "email": "Email",
+        "comment": "Comment",
+        "send": "SEND",
+        "success": "Thank you! Your message has been sent!",
+        "error": "Failed to send"
+    }
+}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import ProductModal from './ProductModal';
+import Image from 'next/image';
 
 type ProductGroup = {
     name: string;
@@ -123,9 +124,11 @@ export default function Products() {
                                         transition-transform transform hover:scale-105 hover:shadow-lg duration-300"
                                 onClick={() => handleCardClick(i)}
                             >
-                                <img
+                                <Image
                                     src={product.image[0]}
                                     alt={product.name}
+                                    width={400}   // ← 必須
+                                    height={240}  // ← 必須
                                     className="w-full h-60 object-cover"
                                 />
                                 <div className="px-4 py-2 text-left">

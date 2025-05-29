@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb';
 
@@ -58,9 +59,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, productGro
             >
                 {/* 画像部分 */}
                 <div className="w-full md:w-[60%] h-[50%] md:h-full flex flex-col items-center justify-center relative overflow-hidden">
-                    <img
+                    <Image
                         src={productGroup.image[currentIndex]}
                         alt={`preview-${currentIndex}`}
+                        width={400}   // ← 必須
+                        height={240}  // ← 必須
                         className="w-full h-full object-contain rounded"
                     />
 
