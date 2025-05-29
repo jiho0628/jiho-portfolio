@@ -1,5 +1,7 @@
 'use client';
 
+import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 import { TbChevronLeft, TbChevronRight } from 'react-icons/tb';
 
@@ -20,6 +22,7 @@ interface ProductModalProps {
 
 const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, productGroup }) => {
     const [currentIndex, setCurrentIndex] = useState(0);
+    const t = useTranslations('Products')
 
     useEffect(() => {
         if (isOpen) {
@@ -58,9 +61,11 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, productGro
             >
                 {/* 画像部分 */}
                 <div className="w-full md:w-[60%] h-[50%] md:h-full flex flex-col items-center justify-center relative overflow-hidden">
-                    <img
+                    <Image
                         src={productGroup.image[currentIndex]}
                         alt={`preview-${currentIndex}`}
+                        width={400}   // ← 必須
+                        height={240}  // ← 必須
                         className="w-full h-full object-contain rounded"
                     />
 
@@ -90,9 +95,9 @@ const ProductModal: React.FC<ProductModalProps> = ({ isOpen, onClose, productGro
                 <div className="flex-1 overflow-y-auto mt-6 md:mt-0 md:pl-6">
                     <h2 className="text-[1.5rem] md:text-[2rem] font-semibold mb-4">{productGroup.title}</h2>
                     <p className="text-sm text-darkgray mb-2">{productGroup.date}</p>
-                    <div className="text-[1.2rem] font-semibold pb-2">詳細</div>
-                    <p className="text-base leading-relaxed pb-6 whitespace-pre-wrap">{productGroup.detail}</p>
-                    <div className="text-[1.2rem] font-semibold">技術スタック</div>
+                    <div className="text-[1.2rem] font-semibold pb-2">{t('detail')}</div>
+                    <p className="text-base leading-relaxed pb-6 whitespace-pre-wrap" > {productGroup.detail}</p>
+                    <div className="text-[1.2rem] font-semibold">{t('skills')}</div>
                     <ul className="list-disc list-inside mt-4">
                         {productGroup.skill.map((skill, i) => (
                             <li key={i}>{skill}</li>

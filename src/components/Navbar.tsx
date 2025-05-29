@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { HiMenu, HiX } from 'react-icons/hi';
+import { useRouter, usePathname } from 'next/navigation';
 
 interface NavbarProps {
     shouldAnimate: boolean;
@@ -20,6 +21,8 @@ const sections = [
 export default function Navbar({ shouldAnimate }: NavbarProps) {
     const navRef = useRef<HTMLElement | null>(null);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const router = useRouter();
+    const pathname = usePathname();
 
     useEffect(() => {
         if (shouldAnimate) {
@@ -30,6 +33,11 @@ export default function Navbar({ shouldAnimate }: NavbarProps) {
             );
         }
     }, [shouldAnimate]);
+
+    const switchLocale = (locale: 'ja' | 'en') => {
+        const pathWithoutLocale = pathname?.replace(/^\/(ja|en)/, '') || '';
+        router.push(`/${locale}${pathWithoutLocale}`);
+    };
 
     return (
         <nav
@@ -46,7 +54,7 @@ export default function Navbar({ shouldAnimate }: NavbarProps) {
                 </a>
 
                 {/* デスクトップ用メニュー */}
-                <ul className="hidden md:flex gap-6 text-sm font-medium">
+                <ul className="hidden md:flex gap-6 text-sm font-medium items-center">
                     {sections.map(({ id, label }) => (
                         <li key={id}>
                             <a
@@ -57,6 +65,22 @@ export default function Navbar({ shouldAnimate }: NavbarProps) {
                             </a>
                         </li>
                     ))}
+                    {/* 言語切り替え */}
+                    <li className="ml-4">
+                        <button
+                            onClick={() => switchLocale('ja')}
+                            className="hover:text-gray-300 px-2"
+                        >
+                            日本語
+                        </button>
+                        |
+                        <button
+                            onClick={() => switchLocale('en')}
+                            className="hover:text-gray-300 px-2"
+                        >
+                            English
+                        </button>
+                    </li>
                 </ul>
 
                 {/* モバイルメニューアイコン */}
@@ -81,6 +105,26 @@ export default function Navbar({ shouldAnimate }: NavbarProps) {
                             {label}
                         </a>
                     ))}
+                    <div className="flex gap-4 pt-4">
+                        <button
+                            onClick={() => {
+                                switchLocale('ja');
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="text-sm hover:text-gray-300"
+                        >
+                            日本語
+                        </button>
+                        <button
+                            onClick={() => {
+                                switchLocale('en');
+                                setIsMobileMenuOpen(false);
+                            }}
+                            className="text-sm hover:text-gray-300"
+                        >
+                            English
+                        </button>
+                    </div>
                 </div>
             )}
         </nav>

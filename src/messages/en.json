@@ -1,0 +1,328 @@
+{
+    "AboutMe": {
+        "title": "",
+        "intro": "Nice to meet you!",
+        "description": "Hello, my name is Jiho Ryuu. I was born and raised in Chiba, Japan, to Chinese parents. I moved to Kyoto when I entered university.\n\nOne of my hobbies is traveling. My dream is to someday travel all across Japan and the world. I believe that experiencing new landscapes and cultures helps me grow as a person.\n\nI am currently a student majoring in CS at Kyoto University. I belong to the Taniguchi Lab, where I have researched multimodal AI. In my pre-research, I worked on developing AI systems that combine images and text. I also studied abroad in Arizona, USA, for a year, where I continued studying computer science.\n\nNow, I am aiming to become a full-stack engineer with expertise in AI research. I am actively learning a wide range of technologies, focusing mainly on backend but also exploring frontend and infrastructure. Creating products that help people and make the world a better place brings me the most joy. For that reason, I continue to study and challenge myself in various technical fields."
+    },
+    "Education": {
+        "intro": "I enrolled in university in April 2021 and, after completing a one-year study abroad program, I am scheduled to graduate in March 2026. I plan to pursue graduate studies and graduate in March 2028. You can click the icons to visit the university websites.",
+        "edu1": {
+            "period": "2021/04 - Present",
+            "name": "Kyoto University, CS",
+            "description": "I am currently a fourth-year undergraduate student. In addition to basic subjects such as mathematics and physics, I have studied a wide range of fields including computer science, graph theory, algorithms, and artificial intelligence."
+        },
+        "edu2": {
+            "period": "2024/08 - 2025/05",
+            "name": "Arizona State University",
+            "description": "During my fourth year of undergraduate studies, I studied abroad for one year at Arizona State University, majoring in Computer Science. Attending classes with local students was a great experience. Arizona State University is one of the top universities in the U.S. in terms of accepting international students. I had the opportunity to interact with people from countries I rarely meet in Japan, including the U.S., Mexico, Spain, Saudi Arabia, Pakistan, Thailand, and Germany."
+        }
+    },
+    "Experience": {
+        "intro": "This section shows my internship experience. I plan to continue gaining experience through both long-term and short-term internships.\nYou can click the icons to visit the company's website.",
+        "exp1": {
+            "period": "2024/03 - 2024/07",
+            "name": "muilab Inc.",
+            "description": "Although this was originally planned to be a long-term internship, I had to pause due to my study abroad. I mainly worked on infrastructure using AWS and wrote test cases in TypeScript."
+        },
+        "exp2": {
+            "period": "2024/05 - Present",
+            "name": "StarUp Inc.",
+            "description": "I am currently working as a long-term intern. I am involved mainly in AI development and backend infrastructure. I also serve as a project manager for a drawing management service product."
+        }
+    },
+    "Skills": {
+        "intro": "I mainly focus on backend development, but I'm also exploring frontend and cloud technologies.",
+        "groups": {
+            "Frontend": {
+                "title": "Frontend",
+                "items": {
+                    "TypeScript": {
+                        "name": "TypeScript",
+                        "description": "Used in the drawing management system at StarUp. I can handle both environment setup and implementation. Also used in this portfolio.",
+                        "icon": "typescript.svg",
+                        "rating": "3"
+                    },
+                    "HTML": {
+                        "name": "HTML",
+                        "description": "Self-taught to support frontend development using TypeScript and React.",
+                        "icon": "html.svg",
+                        "rating": "3"
+                    },
+                    "CSS3": {
+                        "name": "CSS3",
+                        "description": "Self-taught to support frontend development using TypeScript and React.",
+                        "icon": "css3.svg",
+                        "rating": "3"
+                    },
+                    "React": {
+                        "name": "React",
+                        "description": "Used in both the drawing management system at StarUp and this portfolio. I can handle basic implementations.",
+                        "icon": "react.svg",
+                        "rating": "3"
+                    },
+                    "Nextjs": {
+                        "name": "Next.js",
+                        "description": "Used in the drawing management system at StarUp and this portfolio.",
+                        "icon": "nextjs.svg",
+                        "rating": "2"
+                    },
+                    "Tailwind": {
+                        "name": "Tailwind",
+                        "description": "Currently studying it to enhance CSS. Used in this portfolio as well.",
+                        "icon": "tailwind.svg",
+                        "rating": "2"
+                    }
+                }
+            },
+            "Backend": {
+                "title": "Backend",
+                "items": {
+                    "Python": {
+                        "name": "Python",
+                        "description": "I've used it for about 4 years since university. Utilized in the backend of the drawing management system at StarUp. I can implement almost anything.",
+                        "icon": "python.svg",
+                        "rating": "4"
+                    },
+                    "FastAPI": {
+                        "name": "FastAPI",
+                        "description": "Used in the drawing management system at StarUp. I have experience designing APIs.",
+                        "icon": "fastapi.svg",
+                        "rating": "4"
+                    },
+                    "Java": {
+                        "name": "Java",
+                        "description": "Used in university courses. Created a Mario-playing AI using a genetic algorithm at Kyoto University. At Arizona State University, built a simple Reddit-like app in a team of 5.",
+                        "icon": "java.svg",
+                        "rating": "3"
+                    },
+                    "C_Cpp": {
+                        "name": "C/C++",
+                        "description": "Used in university courses. I understand the basic syntax.",
+                        "icon": "ccpp.svg",
+                        "rating": "2"
+                    },
+                    "Swift": {
+                        "name": "Swift",
+                        "description": "Used in university courses abroad. Created a simple household account book app with MongoDB.",
+                        "icon": "swift.svg",
+                        "rating": "2"
+                    }
+                }
+            },
+            "Database": {
+                "title": "Database",
+                "items": {
+                    "MySQL": {
+                        "name": "MySQL",
+                        "description": "Used in the drawing management system at StarUp.",
+                        "icon": "mysql.svg",
+                        "rating": "4"
+                    },
+                    "Qdrant": {
+                        "name": "Qdrant",
+                        "description": "Used to store vector representations of drawings at StarUp. I can operate it using Python or through the UI.",
+                        "icon": "qdrant.svg",
+                        "rating": "3"
+                    }
+                }
+            },
+            "Infrastructure": {
+                "title": "Infrastructure / Cloud",
+                "items": {
+                    "AWS": {
+                        "name": "AWS",
+                        "description": "Used S3, Lambda at mui lab. Also used S3, RDS, and CloudFront at StarUp for managing images and metadata.",
+                        "icon": "aws.svg",
+                        "rating": "3"
+                    },
+                    "GoogleColab": {
+                        "name": "Google Colab",
+                        "description": "Mainly used for machine learning. Used during training of handwritten kanji recognition AI and drawing detection AI at StarUp.",
+                        "icon": "googlecolab.svg",
+                        "rating": "4"
+                    },
+                    "Docker": {
+                        "name": "Docker",
+                        "description": "Frequently used in practice. I can create basic containers and operate via CLI.",
+                        "icon": "docker.svg",
+                        "rating": "3"
+                    },
+                    "GitGitHub": {
+                        "name": "Git / GitHub",
+                        "description": "Used for version control. I can handle basic command operations.",
+                        "icon": "gitgithub.svg",
+                        "rating": "4"
+                    },
+                    "Django": {
+                        "name": "Django",
+                        "description": "Used to create a simple Twitter-like app for learning purposes.",
+                        "icon": "django.svg",
+                        "rating": "2"
+                    }
+                }
+            },
+            "MachineLearning": {
+                "title": "Machine Learning",
+                "items": {
+                    "OpenCV": {
+                        "name": "OpenCV",
+                        "description": "Used for drawing detection logic in the drawing management system at StarUp.",
+                        "icon": "opencv.svg",
+                        "rating": "3"
+                    },
+                    "PyTorch": {
+                        "name": "PyTorch",
+                        "description": "Used for drawing detection logic in the drawing management system at StarUp, and in creating a VAE for research.",
+                        "icon": "pytorch.svg",
+                        "rating": "3"
+                    },
+                    "TensorFlow": {
+                        "name": "TensorFlow",
+                        "description": "Used for handwritten kanji recognition AI training at StarUp, and for handwriting recognition assignments in university.",
+                        "icon": "tensorflow.svg",
+                        "rating": "2"
+                    }
+                }
+            }
+        }
+    },
+    "Products": {
+        "intro": "These are the products and projects I’ve been involved in. I will continue to update them in the future.",
+        "detail": "Details",
+        "skills": "Skills",
+        "items": [
+            {
+                "name": "product1",
+                "detail": "I used transfer learning on the deep learning-based object detection algorithm YOLO (You Only Look Once) with self-annotated data. Using a tool called labelImg, I annotated the data and then used Google Colab to fine-tune a pretrained model. Since preprocessing was crucial during annotation, I used OpenCV for tasks like resolution adjustment and masking. I also created a custom script to validate multiple images. (Validation results are not shown here due to copyright issues.) The trained model is currently used in Archaive, a drawing management system, to detect components in technical drawings.",
+                "date": "2024/08",
+                "title": "Drawing Detection AI",
+                "image": [
+                    "/product/archaive/similar.png"
+                ],
+                "skill": [
+                    "Python",
+                    "Google Colab",
+                    "OpenCV",
+                    "PyTorch",
+                    "Google Cloud Vision",
+                    "Git/GitHub"
+                ]
+            },
+            {
+                "name": "product2",
+                "detail": "I worked on implementing the drawing management system 'Archaive' at StarUp. Archaive is a database for managing technical drawings and supports similar drawing search via AI. I primarily worked on the backend, implementing CRUD operations for the database, creating API endpoints, developing new features, and also served as a PM and full-stack engineer.",
+                "date": "2024/09",
+                "title": "Archaive",
+                "image": [
+                    "/product/archaive/file_database.png",
+                    "/product/archaive/upload.png",
+                    "/product/archaive/project_database.png",
+                    "/product/archaive/project.png",
+                    "/product/archaive/drawing.png"
+                ],
+                "skill": [
+                    "Python",
+                    "FastAPI",
+                    "MySQL",
+                    "Redis",
+                    "PostgreSQL",
+                    "SQLAlchemy",
+                    "AWS",
+                    "Qdrant",
+                    "React",
+                    "TypeScript",
+                    "Next.js",
+                    "HTML",
+                    "CSS3",
+                    "Tailwind CSS",
+                    "Docker/Docker Compose",
+                    "Git/GitHub"
+                ]
+            },
+            {
+                "name": "product3",
+                "detail": "As part of my research, I built a Variational Autoencoder (VAE), a type of unsupervised learning technique using neural networks. I used the MNIST dataset for training.",
+                "date": "2024/06",
+                "title": "Variational Autoencoder",
+                "image": [
+                    "/product/vae/num7.png",
+                    "/product/vae/epic.png",
+                    "/product/vae/graph.png"
+                ],
+                "skill": [
+                    "Python",
+                    "PyTorch",
+                    "NumPy",
+                    "Matplotlib"
+                ]
+            },
+            {
+                "name": "product4",
+                "detail": "This is the website you’re currently viewing. I built it from scratch to introduce myself and showcase my skills. From design to implementation, I handled everything on my own.",
+                "date": "2025/05",
+                "title": "Portfolio",
+                "image": [
+                    "/product/portfolio/hero.png",
+                    "/product/portfolio/contact.png"
+                ],
+                "skill": [
+                    "TypeScript",
+                    "HTML",
+                    "CSS3",
+                    "Tailwind CSS",
+                    "React",
+                    "Next.js",
+                    "Slack",
+                    "Docker/Docker Compose",
+                    "Git/GitHub"
+                ]
+            },
+            {
+                "name": "product5",
+                "detail": "This is a feature used in the contact form of this portfolio. When you submit a message, it gets sent directly to my Slack workspace.",
+                "date": "2025/05",
+                "title": "Slack Notification",
+                "image": [
+                    "/product/slack/contact.png",
+                    "/product/slack/slack.png",
+                    "/product/slack/slack_detail.png"
+                ],
+                "skill": [
+                    "TypeScript",
+                    "Slack"
+                ]
+            },
+            {
+                "name": "product6",
+                "detail": "I contributed to the development of a handwritten kanji recognition model for mobile apps. Using EfficientNet—a lightweight deep learning model suitable for smartphones—we analyzed stroke data and improved image-based recognition through fine-tuning.",
+                "date": "2024/10",
+                "title": "Kanji Recognition",
+                "image": [
+                    "/product/kanji/kanji.png"
+                ],
+                "skill": [
+                    "Python",
+                    "Google Colab",
+                    "TensorFlow",
+                    "Keras",
+                    "OpenCV",
+                    "scikit-learn",
+                    "NumPy",
+                    "Pandas",
+                    "Matplotlib",
+                    "MobileNet"
+                ]
+            }
+        ]
+    },
+    "Contacts": {
+        "title": "Contacts",
+        "intro": "Thank you for visiting my site. I hope you got to know a little about me through this page.\nIf you have any comments or feedback, please feel free to contact me using the form below.",
+        "name": "Name",
+        "email": "Email",
+        "comment": "Comment",
+        "send": "SEND",
+        "success": "Thank you! Your message has been sent!",
+        "error": "Failed to send"
+    }
+}
