@@ -90,6 +90,7 @@ export default function Hero({ triggerAnimation }: HeroProps) {
         );
 
         const handleClick = () => {
+            window.dispatchEvent(new Event('changeDirectionAll'));
             gsap.fromTo(
                 jEl,
                 { y: 0 },

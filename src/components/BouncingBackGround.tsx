@@ -115,6 +115,21 @@ export default function BouncingBackground() {
         });
     }, [balls, config]);
 
+    useEffect(() => {
+        const handleChangeAll = () => {
+            setBalls(prevBalls => {
+                return prevBalls.map(ball => {
+                    const newDx = ball.dy;
+                    const newDy = -ball.dx;
+                    return { ...ball, dx: newDx, dy: newDy };
+                });
+            });
+        };
+
+        window.addEventListener('changeDirectionAll', handleChangeAll);
+        return () => window.removeEventListener('changeDirectionAll', handleChangeAll);
+    }, []);
+
     const changeDirection = (index: number) => {
         const ball = balls[index];
         if (!ball) return;
