@@ -86,7 +86,7 @@
                     "FastAPI": {
                         "name": "FastAPI",
                         "description": "Used in the drawing management system at StarUp. I have experience designing APIs.",
-                        "icon": "FastApi.svg",
+                        "icon": "FastAPI.svg",
                         "rating": "4"
                     },
                     "Java": {
