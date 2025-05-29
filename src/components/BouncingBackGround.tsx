@@ -104,14 +104,12 @@ export default function BouncingBackground() {
         animate();
 
         balls.forEach((ball) => {
-            if (ball.ref.current) {
-                gsap.to(ball.ref.current, {
-                    rotation: 360,
-                    duration: 6,
-                    repeat: -1,
-                    ease: 'linear',
-                });
-            }
+            gsap.to(ball.ref.current, {
+                rotation: 360,
+                duration: 6,
+                repeat: -1,
+                ease: 'linear',
+            });
         });
     }, [balls, config]);
 

@@ -322,6 +322,7 @@
         "email": "Email",
         "comment": "Comment",
         "send": "SEND",
+        "sending": "SENDING...",
         "success": "Thank you! Your message has been sent!",
         "error": "Failed to send"
     }

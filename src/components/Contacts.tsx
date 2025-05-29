@@ -1,14 +1,16 @@
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 
 export default function Contacts() {
     const t = useTranslations('Contacts');
     const formRef = useRef<HTMLFormElement>(null);
+    const [isSubmitting, setIsSubmitting] = useState(false);
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
+        setIsSubmitting(true)
         const payload = {
             name: formData.get("name"),
             email: formData.get("email"),
@@ -27,6 +29,9 @@ export default function Contacts() {
         } else {
             alert(`${t('error')} ${result.status}`);
         }
+
+        setIsSubmitting(false)
+
     };
 
     return (
@@ -72,9 +77,12 @@ export default function Contacts() {
                     <div className="text-center">
                         <button
                             type="submit"
-                            className="bg-darkblue text-white px-6 py-2 rounded hover:bg-opacity-80 transition"
+                            disabled={isSubmitting}
+                            className={`${!isSubmitting ?
+                                'bg-darkblue text-whitegray' :
+                                'bg-darkgray text-darkblue'} px-6 py-2 rounded hover:bg-opacity-10 transition`}
                         >
-                            {t('send')}
+                            {!isSubmitting ? t('send') : t('sending')}
                         </button>
                     </div>
                 </form>
